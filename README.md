@@ -2,42 +2,6 @@
 
 ## Install Required Packages
 
-[//]: # (### Python 3.10:)
-
-[//]: # (1. **Download Python 3.10:**  )
-
-[//]: # (   - Visit [python.org/downloads]&#40;https://www.python.org/downloads/&#41;)
-
-[//]: # (   - Download and run the installer for your operating system.)
-
-[//]: # (   - Ensure to add Python to your system PATH during installation.)
-
-[//]: # ()
-[//]: # (2. **Verify Installation:**  )
-
-[//]: # (   - Open a terminal/command prompt.)
-
-[//]: # (   - Type `python --version` or `python3 --version`.)
-
-[//]: # (   - You should see `Python 3.10.x` indicating a successful installation.)
-
-[//]: # ()
-[//]: # (### Elasticsearch:)
-
-[//]: # ()
-[//]: # (1. **Download Elasticsearch:**  )
-
-[//]: # (   - Visit [elastic.co/downloads/elasticsearch]&#40;https://www.elastic.co/downloads/elasticsearch&#41;.)
-
-[//]: # (   - Download the appropriate version for your OS.)
-
-[//]: # ()
-[//]: # (2. **Extract and Start Elasticsearch:**  )
-
-[//]: # (   - Extract the downloaded package.)
-
-[//]: # (   - Navigate to the )
-
 
 ### Python 3.10:
 
@@ -107,3 +71,13 @@
    - Open a web browser.
    - Go to [http://localhost:9200](http://localhost:9200).
    - Ensure Elasticsearch is running by checking for a JSON response.
+
+
+### Install Required Python Packages:
+
+1. **Navigate to Project Directory:**
+   - Open terminal/command prompt.
+   - Use `cd` to move to the directory containing `requirements.txt`.
+
+2. **Install Packages:**
+   - Run `pip install -r requirements.txt`.
