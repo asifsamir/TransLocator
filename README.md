@@ -1,6 +1,25 @@
 # TransLocator
 
-## Install Required Packages
+## Project Structure
+    The project structure is as follows:
+    - `data`: Contains the dataset in json format.
+    - `src`: Contains the source code for the project.
+    - `requirements.txt`: Contains the required python packages for the project.
+    - `README.md`: Contains the project documentation.
+
+## Dataset
+   The dataset used for this project is provided in the `data` directory in json format. The dataset contains information about the location of the bus stops in the city of Bengaluru. The dataset contains the following fields:
+   - `bug_id`: Unique identifier for the bug.
+   - `bug_title`: Title of the bug.
+   - `bug_description`: Description of the bug.
+   - `project`: Project to which the bug belongs.
+   - `sub_project`: Subject to which the bug belongs.
+   - `version`: Version of the project.
+   - `fixed_version`: Version in which the bug was fixed.
+   - `fixed_files`: Files in which the bug was fixed as a json array.
+
+
+## Installing Required Packages
 
 
 ### Python 3.10:
