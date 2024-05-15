@@ -2,13 +2,15 @@
 
 ## Project Structure
     The project structure is as follows:
-    - `data`: Contains the dataset in json format.
-    - `src`: Contains the source code for the project.
-    - `requirements.txt`: Contains the required python packages for the project.
-    - `README.md`: Contains the project documentation.
+    * `data`: Contains the dataset in json format.
+    * `src`: Contains the source code for the project.
+      - `data_preprocessing.py`: Contains the code for data preprocessing.
+    *
+    * `requirements.txt`: Contains the required python packages for the project.
+    * `README.md`: Contains the project documentation.
 
 ## Dataset
-   The dataset used for this project is provided in the `data` directory in json format. The dataset contains information about the location of the bus stops in the city of Bengaluru. The dataset contains the following fields:
+   The refined Bench4BL dataset used for this project is provided in the `data` directory in json format. The dataset contains information about the location of the bus stops in the city of Bengaluru. The dataset contains the following fields:
    - `bug_id`: Unique identifier for the bug.
    - `bug_title`: Title of the bug.
    - `bug_description`: Description of the bug.
@@ -100,3 +102,10 @@
 
 2. **Install Packages:**
    - Run `pip install -r requirements.txt`.
+
+## Replicate
+
+To replicate the project, follow the steps below:
+
+1. **Retrieve Results from Elasticsearch:**
+Provide 
