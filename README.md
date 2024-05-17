@@ -112,7 +112,7 @@
    - Extract the source files from Git Projects per version and using 'Indexer.py' index them in Elasticsearch Index.
    
 2. ** Retrieve Results from Elasticsearch:**
-   - Run 'src/IR/Retriever/Retriever.py' to retrieve the results from Elasticsearch. The configuration for the index is provided in 'IR_Config.yaml'.
+   - Run 'src/IR/Retriever/Retriever.py' to retrieve the results from Elasticsearch. The configuration for the index is provided in 'IR_config.yaml'.
    - The retrieved results are stored in 'Retrieved_Results' directory.
 
 [//]: # (1. **Retrieve Results from Elasticsearch:**)
