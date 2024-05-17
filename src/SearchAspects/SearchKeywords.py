@@ -5,9 +5,9 @@ from rank_bm25 import BM25Okapi, BM25L
 from src.Utils import TextPreprocessor
 
 
-def find_keywords(query, keyword_length):
-    model_path = "F:\Models\masked_bugreport_full"
-    model = TransformerDocumentEmbeddings(model_path)
+def find_keywords(query, keyword_length, model_path):
+    # model_path = "F:\Models\masked_bugreport_full"
+    model = TransformerDocumentEmbeddings(model_path=model_path)
     kw_model = KeyBERT(model=model)
 
     keywords = kw_model.extract_keywords(query, keyphrase_ngram_range=(3, 4), stop_words='english', top_n=keyword_length, use_mmr=True, diversity=0.7)
@@ -46,15 +46,18 @@ def score_search_results(search_results_es, keywords):
 
 
 
-def search_by_keywords(query, search_results_es, keyword_length):
+def score_by_keywords(query, search_results_es, keyword_length, model_path):
 
     # find keywords first
-    keywords = find_keywords(query, keyword_length)
+    keywords = find_keywords(query, keyword_length, model_path=model_path)
     # keywords are list of tuples, convert them to a list of strings taking the first element of the tuple
     keywords = [keyword[0] for keyword in keywords]
 
     # now using the keywords, find the bm25 scores of the search results
     score_docs = score_search_results(search_results_es, keywords)
+
+    # sort the search results based on the bm25 scores
+    # score_docs = sorted(score_docs, key=lambda x: x["score_bm25"], reverse=True)
 
     return score_docs
 
@@ -73,5 +76,5 @@ If closing is really required then I think it could make sense to defer it to a 
     }'''}]
     keyword_length = 5
 
-    print(search_by_keywords(query, search_results_es, keyword_length))
+    print(score_by_keywords(query, search_results_es, keyword_length))
 

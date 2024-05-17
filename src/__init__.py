@@ -1,1 +1,3 @@
-from .SearchAspects.SearchKeywords import search_by_keywords
+from .SearchAspects.SearchKeywords import score_by_keywords
+from .SearchAspects.SearchCrossEncoder import score_by_cross_encoder
+from .SearchAspects.CE_Scorer import CrossEncoderScorer
