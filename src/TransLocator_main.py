@@ -7,6 +7,15 @@
 
 import pandas as pd
 from IR.Searcher.Searcher import Searcher
+from src import SearchAspects
+
+
+def add_index_to_search_results(search_results):
+    for index, search_result in enumerate(search_results):
+        search_result["index"] = index + 1
+
+    return search_results
+
 
 if __name__ == '__main__':
     # read the bug reports from the json file into the dataframe
@@ -29,6 +38,9 @@ if __name__ == '__main__':
 
         search_results = searcher.search_Extended(project=project, sub_project=sub_project, version=version, query=query, top_K_results=100, field_to_return=["file_url", "source_code"])
 
+        # add index to the search results
+        search_results = add_index_to_search_results(search_results)
+
         # first, get the results based on keyword search
-        print(search_results)
+        re_ranked_keywords = SearchAspects.SearchKeywords.search_by_keywords(query, search_results)
         break
