@@ -124,3 +124,9 @@
     - `--L`: Length of the keywords.
     - `--topK_rerank`: Number of bugs to rerank.
     - `--topN`: Number of top outputs to return.
+
+
+## License
+
+    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+    
