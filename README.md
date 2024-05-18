@@ -4,7 +4,6 @@
    The project structure is as follows:
    * `data`: Contains the dataset in json format. 
    * `src`: Contains the source code for the project.
-   * `data_preprocessing.py`: Contains the code for data preprocessing.
    * `requirements.txt`: Contains the required python packages for the project.
    * `README.md`: Contains the project documentation.
 
@@ -107,15 +106,19 @@
 
 1. Create Index:
    - Run 'src/IR/Indexer/Index_Creator.py' to create an index in Elasticsearch. The configuration for the index is provided in 'IR_Config.yaml'.
-   - Extract the source files from Git Projects per version and using 'Indexer.py' index them in Elasticsearch Index.
-2. Train or download the models from the following links:
-   - [Keyword Model](https://drive.google.com/file/d/1-1)
+   - Extract the source files from Git Projects per version and index them in Elasticsearch using 'Indexer.py'. The GitHub Repositories are listed in the [Bench4BL](https://github.com/exatoa/Bench4BL) repository.
+   - The default port for Elasticsearch is 9200. 
+2. Train or download the models from the following link:
+   - [Keyword Model](https://zenodo.org/records/11212523?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImZlNTVlOTkzLTU1NTctNDYzYi1hODZhLTA0NDJhNTY4NzUxZCIsImRhdGEiOnt9LCJyYW5kb20iOiI3ZmU3YWQ1NDFmZTZjOGFmZmE2ODBiMzVhZTMwNzkyNyJ9.RIQHtc4R1G7w9Ytxcw9-VeiwWHbx-5C_SOtMsPxoVLliOs9Cv3AsjoMQJ2woXdhUCWu9Wt1UhnVZCaQ_Ybl3Tg)
    
-#### Localize the bugs:
+#### Localizing the bugs:
    Run the command below to localize the bugs:
-   ```python src --br-path /path/to/input/data  --kw-model-dir /path/to/keyword/model --ce-model-dir /path/to/cross-encoder/model --L 10 --topK_rerank 50 --topN 10```
+
+   ```
+   python src --br-path /path/to/input/data  --kw-model-dir /path/to/keyword/model --ce-model-dir /path/to/cross-encoder/model --L 10 --topK_rerank 50 --topN 10
+   ```
    
-    - `--br-path`: Path to the input data in json format.
+    - `--br-path`: Path to the input data in json format. The format of the json file should follow the format of the dataset provided in the `data` directory.
     - `--kw-model-dir`: Path to the keyword model.
     - `--ce-model-dir`: Path to the cross-encoder model.
     - `--L`: Length of the keywords.
