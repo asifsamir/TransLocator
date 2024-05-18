@@ -135,7 +135,7 @@ Learn more about PyTorch with CUDA support [here](https://pytorch.org/get-starte
    - Extract the source files from Git Projects per version and index them in Elasticsearch using 'Indexer.py'. The GitHub Repositories are listed in the [Bench4BL](https://github.com/exatoa/Bench4BL) repository.
    - The default port for Elasticsearch is 9200. 
 2. Train or download the models from the following link:
-   - [Keyword Model](https://zenodo.org/records/11212523?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImZlNTVlOTkzLTU1NTctNDYzYi1hODZhLTA0NDJhNTY4NzUxZCIsImRhdGEiOnt9LCJyYW5kb20iOiI3ZmU3YWQ1NDFmZTZjOGFmZmE2ODBiMzVhZTMwNzkyNyJ9.RIQHtc4R1G7w9Ytxcw9-VeiwWHbx-5C_SOtMsPxoVLliOs9Cv3AsjoMQJ2woXdhUCWu9Wt1UhnVZCaQ_Ybl3Tg)
+   - [Resources](https://zenodo.org/records/11212523?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImZlNTVlOTkzLTU1NTctNDYzYi1hODZhLTA0NDJhNTY4NzUxZCIsImRhdGEiOnt9LCJyYW5kb20iOiI3ZmU3YWQ1NDFmZTZjOGFmZmE2ODBiMzVhZTMwNzkyNyJ9.RIQHtc4R1G7w9Ytxcw9-VeiwWHbx-5C_SOtMsPxoVLliOs9Cv3AsjoMQJ2woXdhUCWu9Wt1UhnVZCaQ_Ybl3Tg)
    
 #### Localizing the bugs:
    Run the command below to localize the bugs:
