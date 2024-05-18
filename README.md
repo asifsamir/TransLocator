@@ -19,9 +19,18 @@
    - `fixed_files`: Files in which the bug was fixed as a json array.
 
 
+## Pre-requisites
+   The following are the pre-requisites for the project:
+   * Python 3.10
+   * Elasticsearch
+   * NVIDIA CUDA enabled GPU
+   * Required Python Packages
+
 ## Installing Required Packages
 
 ### Python 3.10:
+> We recommend using a virtual environment to install the packages and run the application.
+> Learn to use a virtual environment [here](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/).
 
 #### Windows:
 
@@ -125,8 +134,11 @@
     - `--topK_rerank`: Number of bugs to rerank.
     - `--topN`: Number of top outputs to return.
 
+    
 
-## License
 
-    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[//]: # (## License)
+
+[//]: # ()
+[//]: # (    This project is licensed under the MIT License - see the [LICENSE]&#40;LICENSE&#41; file for details.)
     

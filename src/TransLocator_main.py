@@ -8,6 +8,7 @@ import pandas as pd
 
 import SearchAspects
 from IR.Searcher.Searcher import Searcher
+from Utils.IR_Evaluation_Metrics.IR_Performance_Evaluator import Performance_Evaluator
 
 
 def add_index_to_search_results(search_results):
@@ -91,8 +92,9 @@ def localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, kw_length):
         ground_truths_all.append(ground_truths)
         search_results_all.append(top_10_results)
 
-        break
+    performance = Performance_Evaluator.evaluate_several(ground_truths_all, search_results_all, at_Ks=[1, 5, 10])
 
+    return performance
 
 
 # if __name__ == '__main__':
