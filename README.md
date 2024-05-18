@@ -111,10 +111,13 @@
    - Run 'src/IR/Indexer/Index_Creator.py' to create an index in Elasticsearch. The configuration for the index is provided in 'IR_Config.yaml'.
    - Extract the source files from Git Projects per version and using 'Indexer.py' index them in Elasticsearch Index.
    
-2. ** Retrieve Results from Elasticsearch:**
-   - Run 'src/IR/Retriever/Retriever.py' to retrieve the results from Elasticsearch. The configuration for the index is provided in 'IR_config.yaml'.
-   - The retrieved results are stored in 'Retrieved_Results' directory.
-
-[//]: # (1. **Retrieve Results from Elasticsearch:**)
-
-[//]: # (Provide )
+#### Localize the bugs:
+   Run the command below to localize the bugs:
+   ```python src --br-path /path/to/input/data --kw-model-dir /path/to/keyword/model --ce-model-dir /path/to/cross-encoder/model --L 10 --topK_rerank 50 --topN 10
+    ```
+    - `--br-path`: Path to the input data in json format.
+    - `--kw-model-dir`: Path to the keyword model.
+    - `--ce-model-dir`: Path to the cross-encoder model.
+    - `--L`: Length of the keywords.
+    - `--topK_rerank`: Number of bugs to rerank.
+    - `--topN`: Number of top outputs to return.
