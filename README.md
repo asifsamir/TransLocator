@@ -59,6 +59,23 @@
    - Type `python3.10 --version`.
    - You should see `Python 3.10.x`.
 
+
+### Install PyTorch:
+PyTorch with CUDA 11.3 support is required for the project.
+
+Use the following command to install PyTorch with CUDA support:
+> ```
+> pip install torch==1.10.0+cu113 torchvision==0.11.0+cu113 torchaudio==0.10.0+cu113 torchtext==0.11.0 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+> ```
+Verify the installation by running the following command:
+> ```
+> python -c "import torch; print(torch.cuda.is_available())"
+> ```
+You should see `True` if PyTorch is installed correctly with CUDA support.
+
+If you do not have a CUDA-enabled GPU, install the CPU version of PyTorch.
+Learn more about PyTorch with CUDA support [here](https://pytorch.org/get-started/locally/).
+
 ### Elasticsearch:
 
 #### Windows:
