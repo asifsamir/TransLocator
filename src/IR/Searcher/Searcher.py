@@ -1,7 +1,6 @@
 from elasticsearch import Elasticsearch
-import json
 
-from src.IR.config.Elasic_Config_Loader import Elasic_Config_Loader
+from IR.config.Elasic_Config_Loader import Elasic_Config_Loader
 
 
 class Searcher:

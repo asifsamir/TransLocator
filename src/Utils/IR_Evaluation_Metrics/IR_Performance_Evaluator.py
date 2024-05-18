@@ -1,4 +1,4 @@
-from src.Utils.IR_Evaluation_Metrics.Metrics.Evaluation_Metrics_2 import AverageHit_At_K, \
+from Utils.IR_Evaluation_Metrics.Metrics.Evaluation_Metrics_2 import AverageHit_At_K, \
     AverageRecall_At_K, MRR, MAP, AverageNDCG
 
 

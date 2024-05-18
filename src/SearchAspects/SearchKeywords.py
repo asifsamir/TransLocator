@@ -1,8 +1,8 @@
 from flair.embeddings import TransformerDocumentEmbeddings
 from keybert import KeyBERT
-from rank_bm25 import BM25Okapi, BM25L
+from rank_bm25 import BM25L
 
-from src.Utils import TextPreprocessor
+from Utils import TextPreprocessor
 
 
 def find_keywords(query, keyword_length, model_path):

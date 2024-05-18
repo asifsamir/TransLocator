@@ -1,5 +1,5 @@
 import unittest
-from src.IR.Searcher import Searcher
+from IR.Searcher import Searcher
 
 class TestSearcher(unittest.TestCase):
     searcher = None

@@ -1,7 +1,7 @@
 from copy import deepcopy
 
-from src.SearchAspects.CE_Scorer import CrossEncoderScorer
-from src.Utils import JavaSourceParser
+from SearchAspects.CE_Scorer import CrossEncoderScorer
+from Utils import JavaSourceParser
 
 
 def get_methods_from_source_code(source_code):

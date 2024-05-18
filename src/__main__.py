@@ -1,7 +1,7 @@
 import argparse
 import os
 
-from src.TransLocator_main import localize
+from TransLocator_main import localize
 
 
 def main():
@@ -75,6 +75,7 @@ def main():
         print("The value for L must be greater than 0")
         exit(1)
 
+    print("Localizing Bugs in Source Code using TransLocator")
     localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, length)
 
 if __name__ == "__main__":

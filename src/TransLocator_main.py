@@ -1,6 +1,3 @@
-import os
-from copy import deepcopy
-
 # retrieve top-100 documents for each bug report from elastic search
 
 # first read the bug reports from the json file into the dataframe
@@ -8,9 +5,9 @@ from copy import deepcopy
 # then save the results into a json file
 
 import pandas as pd
+
+import SearchAspects
 from IR.Searcher.Searcher import Searcher
-from src import SearchAspects
-import argparse
 
 
 def add_index_to_search_results(search_results):
@@ -49,10 +46,6 @@ def rerank_DOI(results_dictionary, top_K_results):
 
 
 def localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, kw_length):
-    # read the bug reports from the json file into the dataframe
-    # bug_reports_df = pd.read_json("D:\Research\Coding\Replication_Package\TransLocator\data\\test_fixed_all_TIMED.json")
-    # keyword_model_path = "F:\Models\masked_bugreport_full"
-    # cross_encoder_model_path = 'F:\Models\Cross_encoder\CodeBert_Full_DS_Timed'
 
     bug_reports_df = pd.read_json(br_path)
 
@@ -84,10 +77,10 @@ def localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, kw_length):
 
         # first, get the results based on keyword search
         search_results = SearchAspects.SearchKeywords.score_by_keywords(query, search_results, keyword_length=kw_length,
-                                                                        model_path=keyword_model_path)
+                                                                               model_path=keyword_model_path)
 
         search_results = SearchAspects.SearchCrossEncoder.score_by_cross_encoder(query, search_results,
-                                                                                 ce_model_path=cross_encoder_model_path)
+                                                                                        ce_model_path=cross_encoder_model_path)
 
         # now, find the DOI score for each result
         search_results = rerank_DOI(search_results, top_K_results=topN)
@@ -101,79 +94,12 @@ def localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, kw_length):
         break
 
 
-# def main():
-#     # Create the parser
-#     parser = argparse.ArgumentParser(description="Localizing Bugs in Source Code using TransLocator")
-#
-#     # Add arguments
-#     parser.add_argument('--br-path', type=str, required=True, help='The file path for input data')
-#     parser.add_argument('--kw-model-dir', type=str, required=True,
-#                         help='The directory where the keyword model is stored')
-#     parser.add_argument('--ce-model-dir', type=str, required=True,
-#                         help='The directory where the cross-encoder model is stored')
-#     parser.add_argument('--L', type=int, required=True,
-#                         help='Keyword length to consider')
-#     parser.add_argument('--topK_rerank', type=int, required=True, help='Specify how many results to rerank')
-#     parser.add_argument('--topN', type=int, required=True,
-#                         help='Specify how many top results to consider for the final output')
-#
-#     args = parser.parse_args()
-#
-#     # check if all the required arguments are provided indvidually
-#     if not args.br_path:
-#         print("The bug report file path is required")
-#         exit(1)
-#     elif not args.kw_model_dir:
-#         print("The keyword model directory is required")
-#         exit(1)
-#     elif not args.ce_model_dir:
-#         print("The cross-encoder model directory is required")
-#         exit(1)
-#     elif not args.topK_rerank:
-#         print("The value for topK_rerank is required")
-#         exit(1)
-#     elif not args.topN:
-#         print("The value for topN is required")
-#         exit(1)
-#     elif not args.L:
-#         print("The value for L is required")
-#         exit(1)
-#
-#     br_path = args.br_path
-#     kw_model_dir = args.kw_model_dir
-#     ce_model_dir = args.ce_model_dir
-#     topK_rerank = args.topK_rerank
-#     topN = args.topN
-#     length = args.L
-#
-#
-#     # validate if the paths are correct
-#     if not os.path.exists(br_path):
-#         print("The bug report file path does not exist")
-#         exit(1)
-#
-#     if not os.path.exists(kw_model_dir):
-#         print("The keyword model directory does not exist")
-#         exit(1)
-#
-#     if not os.path.exists(ce_model_dir):
-#         print("The cross-encoder model directory does not exist")
-#         exit(1)
-#
-#     if topK_rerank < 1:
-#         print("The value for topK_rerank must be greater than 0")
-#         exit(1)
-#
-#     if topN < 1 or topN > topK_rerank:
-#         print("The value for topN must be greater than 0 and less than or equal to topK_rerank")
-#         exit(1)
-#
-#     if length < 1:
-#         print("The value for L must be greater than 0")
-#         exit(1)
-#
-#     localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, length)
-#
-#
+
 # if __name__ == '__main__':
-#     main()
+#     br_path = "D:\Research\Coding\Replication_Package\TransLocator\data\\test_fixed_all_TIMED.json"
+#     kw_model_dir = "F:\Models\masked_bugreport_full"
+#     ce_model_dir = 'F:\Models\Cross_encoder\CodeBert_Full_DS_Timed'
+#     topK_rerank = 100
+#     topN = 10
+#     length = 10
+#     localize(br_path, kw_model_dir, ce_model_dir, topK_rerank, topN, length)
