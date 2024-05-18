@@ -103,18 +103,18 @@
 
 ## Replicate
 
-### To replicate the project, follow the steps below:
-
 #### Index Documents in Elasticsearch for Each version of the Project:
 
-1. ** Create Index:**
+1. Create Index:
    - Run 'src/IR/Indexer/Index_Creator.py' to create an index in Elasticsearch. The configuration for the index is provided in 'IR_Config.yaml'.
    - Extract the source files from Git Projects per version and using 'Indexer.py' index them in Elasticsearch Index.
+2. Train or download the models from the following links:
+   - [Keyword Model](https://drive.google.com/file/d/1-1)
    
 #### Localize the bugs:
    Run the command below to localize the bugs:
-   ```python src --br-path /path/to/input/data --kw-model-dir /path/to/keyword/model --ce-model-dir /path/to/cross-encoder/model --L 10 --topK_rerank 50 --topN 10
-    ```
+   ```python src --br-path /path/to/input/data  --kw-model-dir /path/to/keyword/model --ce-model-dir /path/to/cross-encoder/model --L 10 --topK_rerank 50 --topN 10```
+   
     - `--br-path`: Path to the input data in json format.
     - `--kw-model-dir`: Path to the keyword model.
     - `--ce-model-dir`: Path to the cross-encoder model.
